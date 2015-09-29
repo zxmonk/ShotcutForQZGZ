@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<Connection>
+  <Parameters>
+    <DatabaseIP>16A86BEBCA4FF3E5A0058438E6EB108B0B12D37BF1C147E3</DatabaseIP>
+    <User>49604ED1D3AFF80F</User>
+    <Password>DD1DFFD613DA4AF4DF1A9BFEB649D530</Password>
+    <Default>0</Default>
+  </Parameters>
+  <Parameters>
+    <DatabaseIP>16A86BEBCA4FF3E5E36D91C4B76696B07F19F42834F24978</DatabaseIP>
+    <User>49604ED1D3AFF80F</User>
+    <Password>DD1DFFD613DA4AF4DF1A9BFEB649D530</Password>
+    <Default>1</Default>
+    <Node>SC</Node>
+    <PersonInCharge>B4A1C574183251AF</PersonInCharge>
+    <Writer>7A62E8D69BFCF60E</Writer>
+    <SaveLocation>784AC09268B5BD038F125860926E36573D713C329D4961CC912106E364852E44FD58CEC289FFB49CD357929721BB2ABA5FE4C296DD0FA9ED</SaveLocation>
+  </Parameters>
+</Connection>
