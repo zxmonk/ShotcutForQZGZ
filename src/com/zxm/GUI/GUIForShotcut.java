@@ -36,11 +36,11 @@ public class GUIForShotcut extends javax.swing.JFrame {
         FileChannel out = null;
 
         try {
-            
+
             File s = new File(sString);
             File t = new File(tString);
-            
-            if(t.exists()){
+
+            if (t.exists()) {
                 //t.delete();
             }
 
@@ -113,7 +113,7 @@ public class GUIForShotcut extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
         jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -145,7 +145,7 @@ public class GUIForShotcut extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setText("jTextField1");
+        jLabel1.setText("请确保分析软件在默认的C:\\program files文件夹下");
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -225,24 +225,24 @@ public class GUIForShotcut extends javax.swing.JFrame {
                         .addGap(60, 60, 60)
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(122, Short.MAX_VALUE)
+                        .addComponent(jButton1)
+                        .addGap(90, 90, 90))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(103, 103, 103)))
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jLabel1)
+                .addGap(29, 29, 29))
         );
 
         pack();
@@ -258,19 +258,22 @@ public class GUIForShotcut extends javax.swing.JFrame {
         String[] IPStrings = {"97", "26", "147", "172", "35", "2"};
         int selectedIndex = jList1.getSelectedIndex();
         //System.out.println("Connection"+IPStrings[selectedIndex]+".xml");
-        String filenameString = "src\\com\\zxm\\GUI\\xml\\" + "Connection" + IPStrings[selectedIndex] + ".xml";
-        
-        String toFilenameString = "D:\\Program Files\\前兆观测数据跟踪分析\\" + "Connection" + ".xml";
-        
+        String filenameString = "xml\\" + "Connection" + IPStrings[selectedIndex] + ".xml";
+
+        String toFilenameString = "C:\\Program files\\前兆观测数据跟踪分析\\" + "Connection" + ".xml";
+
         fileChannelCopy(filenameString, toFilenameString);
-        
-        String pathString = "D:\\Program\" \"Files\\前兆观测数据跟踪分析\\";
-        Runtime rt = Runtime.getRuntime();  
-        try {  
+
+        //String pathString = "C:\\prgram前兆观测数据跟踪分析\\";
+        Runtime rt = Runtime.getRuntime();
+        try {
             //rt.exec("mspaint.exe");  
-            rt.exec("cmd /c DataTracker.exe");  
-        } catch (IOException e) {  
-            e.printStackTrace();  
+            //Process ps = rt.exec("cmd /c "+ pathString +"DataTracker.exe C:\\Program\" \"Files\\前兆观测数据跟踪分析\\DataProcessDLL.exe");  
+
+            Process ps = rt.exec("cmd /c start shortcut.bat");
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jButton1MouseClicked
 
@@ -320,9 +323,9 @@ public class GUIForShotcut extends javax.swing.JFrame {
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JList jList1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
